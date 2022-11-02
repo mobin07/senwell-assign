@@ -228,7 +228,8 @@ useEffect(()=>{
               <Button
                 fontFamily={'heading'}
                 mt={8}
-                w={'full'}
+                w={'20%'}
+                borderRadius={'50px'}
                 bgGradient="linear(to-r, green.400,green.400)"
                 color={'white'}
                 _hover={{
