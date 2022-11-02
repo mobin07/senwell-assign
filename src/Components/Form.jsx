@@ -52,27 +52,29 @@ const [num,setNum]=useState(false)
 const handleEmail=(e)=>{
 setEmail(e.target.value)
 }
+const validate=()=>{
+  setCapital(false)
+  setSpecial(false)
+  setNum(false)
+  if(pass.match(/[A-Z]/))
+  {
+      setCount((prev)=>prev+1)
+      setCapital(true)
+  }
+  if(pass.match(/[0-9]/))
+  {
+      setNum(true)
+      setCount((prev)=>prev+1)
+  }
+  if(pass.match(/[!\@\#\$\%\^\&\*\(\)\_\+]/))
+  {
+      setSpecial(true)
+      setCount((prev)=>prev+1)
+  }
+}
 const handlePass=(e)=>{
     setPass(e.target.value)
-    setCapital(false)
-    setSpecial(false)
-    setNum(false)
-    if(pass.match(/[A-Z]/))
-    {
-        setCount((prev)=>prev+1)
-        setCapital(true)
-    }
-    if(pass.match(/[0-9]/))
-    {
-        setNum(true)
-        setCount((prev)=>prev+1)
-    }
-    if(pass.match(/[!\@\#\$\%\^\&\*\(\)\_\+]/))
-    {
-        setSpecial(true)
-        setCount((prev)=>prev+1)
-    }
-
+    validate()
     }
 const handleSubmit=()=>{
     if(email.length==0 || pass.length==0){
@@ -87,7 +89,7 @@ alert('please enter email or password')
     }
 }
 useEffect(()=>{
-    
+    validate()
 },[pass,capital,num,special])
 
 
