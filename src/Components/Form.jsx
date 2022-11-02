@@ -235,7 +235,7 @@ useEffect(()=>{
                 _hover={{
                   bgGradient: 'linear(to-r, green.600,green.600)',
                   boxShadow: 'xl',
-                }}>
+                }} onClick={handleSubmit}>
                 Login
               </Button>
               <Stack pt={6}>
